@@ -1,0 +1,62 @@
+PYTHON:
+-Make sure you hae the following installed in your global python environment
+	djangorestframework and django-cors-headers
+
+-Open settings.py file under the /app folder.
+-Edit the settings.py file accordingly
+	INSTALLED APPS;
+	'rest_framework',: pip install djangorestframework
+    'corsheaders',:pip install django-cors-headers
+
+    MIDDLEWARE:
+    'corsheaders.middleware.CorsMiddleware'#simply
+
+POSTGRES DATABASE:
+-Make sure postgres is already running in your machine.
+	-sudo service postgresql status 
+
+-If not start it with:
+	-sudo service postgresql start
+
+-In the settings.py file(/project/app/settings.py):
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql', #edit this to reflect the database of choice
+        'NAME': 'core2', #edit this to reflect the name of your postgres database
+        'USER': 'postgres', #edit this to reflect the name of the postgres user
+        'PASSWORD': 'Skopidez254#', #add the password for your postgres user here
+        'HOST': 'localhost', #if running locally keep this as localhost
+        'PORT': '' #you can keep this empty
+    }
+}
+
+-If the connections for the database are correct run the following commands:
+
+	-navigate to the /app directory, make sure you can access the manage.py file by running ls
+	-run:
+		python manage.py makemigrations
+		python manage.py migrate
+-The tables for the models in /core/models.py should now be automatically generated.
+
+
+ANGULAR:
+-Navigate to the main project directory /project
+-run the following:
+	
+	-npm install
+	-npm run build
+	-npm start/ng serve
+
+
+MAILHOG (email testing service)
+-After install installing Mailhog, you can run it with the following commands:
+
+	-navigate to the MailHog directory
+	-Start MailHog:
+		~/go/bin/MailHog
+
+-MailHog runs in port 8025 by default so make sure it doesn't conflict with any running services in your machine.
+
+-When you select the option for forgot password, a link will be sent via localhost:8025 to the registered user, from there, the user can navigate to the link which will redirect the user back to the angular app to reset their password. Changed should reflect in the db.
+
+-Make sure you have the url localhost:8025 open to check for any mail sent to a registered user who clicked the link forgot password in the login page.
