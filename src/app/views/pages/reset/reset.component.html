@@ -1,0 +1,31 @@
+<div class="bg-light min-vh-100 d-flex flex-row align-items-center">
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col lg="7" md="9" xl="6">
+        <c-card class="mx-4">
+          <c-card-body class="p-4">
+            <form [formGroup]="form" (submit)="submit()">
+              <h1>Password Reset</h1>
+              <p class="text-medium-emphasis">Reset your Password</p>
+              <c-input-group class="mb-3">
+                <span cInputGroupText>
+                  <svg cIcon name="cilLockLocked"></svg>
+                </span>
+                <input autoComplete="new-password" formControlName="password" placeholder="Password" type="password" />
+              </c-input-group>
+              <c-input-group class="mb-4">
+                <span cInputGroupText>
+                  <svg cIcon name="cilLockLocked"></svg>
+                </span>
+                <input autoComplete="new-password" formControlName="password_confirm" placeholder="Repeat password" type="password" />
+              </c-input-group>
+              <div class="d-grid">
+                <button cButton color="success" type="submit">Reset Password</button>
+              </div>
+            </form>
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>

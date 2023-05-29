@@ -1,0 +1,28 @@
+<div class="bg-light min-vh-100 d-flex flex-row align-items-center">
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col lg="7" md="9" xl="6">
+        <c-card class="mx-4">
+          <c-card-body class="p-4">
+            <div *ngIf="cls" class="alert alert-{{cls}}" role="alert">
+              {{ message }}
+            </div>
+            <form [formGroup]="form" (submit)="submit()">
+              <h1>Account Reset</h1>
+              <p class="text-medium-emphasis">Recover your account</p>
+
+              <c-input-group class="mb-3">
+                <span cInputGroupText>@</span>
+                <input autoComplete="email" formControlName="email" placeholder="Email" />
+              </c-input-group>
+              
+              <div class="d-grid">
+                <button cButton color="success" type="submit">Recover Account</button>
+              </div>
+            </form>
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>

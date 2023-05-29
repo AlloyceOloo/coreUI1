@@ -1,0 +1,9 @@
+DB:
+postgres
+
+PYTHON:
+Django
+
+Modules:
+Corsheaders
+Rest framework
